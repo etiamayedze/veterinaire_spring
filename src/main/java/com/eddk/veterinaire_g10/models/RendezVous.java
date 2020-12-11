@@ -10,30 +10,33 @@ import java.util.List;
 @Entity(name = "rendezvous")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Rendezvous {
+public class RendezVous {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idRV;
+    private int rdv_id;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonIgnore
-    @JoinColumn(foreignKey = @ForeignKey(name = "idAnimal"))
+    @JoinColumn(foreignKey = @ForeignKey(name = "animal_id"))
     private Animal animal;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonIgnore
-    @JoinColumn(foreignKey = @ForeignKey(name = "idMedecin"))
+    @JoinColumn(foreignKey = @ForeignKey(name = "medecin_id"))
     private Medecin medecin;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="rendezvous")
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="rendez_vous")
     @JsonIgnore
     private List<Ordonnance> ordonnances;
 
-    public Rendezvous() {
+    private String date_rdv;
+    private String heure_debut_rdv;
+    private String heure_fin_rdv;
+
+
+    public RendezVous() {
     }
 
-    public Rendezvous(Animal animal, Medecin medecin) {
-        this.animal = animal;
-        this.medecin = medecin;
-    }
+
+
 }

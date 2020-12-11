@@ -5,5 +5,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v0/rendezvous")
-public class RendezvousController {
+public class RendezVousController {
 }

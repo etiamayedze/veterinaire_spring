@@ -13,7 +13,10 @@ import java.util.List;
 public class Parent {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idParent;
+    private int parent_id;
+
+    private String nom_parent;
+    private String prenom_parent;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="parent")
     @JsonIgnore
@@ -21,5 +24,7 @@ public class Parent {
 
     public Parent(){
     }
+
+
 
 }

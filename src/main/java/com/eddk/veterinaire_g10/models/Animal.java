@@ -13,27 +13,28 @@ import java.util.List;
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idAnimal;
+    private int animal_id;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonIgnore
-    @JoinColumn(foreignKey = @ForeignKey(name = "idParent"))
+    @JoinColumn(foreignKey = @ForeignKey(name = "parent_id"))
     private Parent parent;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JsonIgnore
-    @JoinColumn(foreignKey = @ForeignKey(name = "idTypeAnimal"))
-    private TypeAnimal typeAnimal;
+    private String nom_animal;
+    private String sex_animal;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="animal")
+    private List<RendezVous> rendez_vous;
+
+    @ManyToOne(fetch=FetchType.LAZY)
     @JsonIgnore
-    private List<Rendezvous> rendezvous;
+    @JoinColumn(foreignKey = @ForeignKey(name = "type_animal_id"))
+    private TypeAnimal type_animal;
 
     public Animal() {
     }
 
-    public Animal(Parent parent, TypeAnimal typeAnimal) {
-        this.parent = parent;
-        this.typeAnimal = typeAnimal;
-    }
+
+
+
 }

@@ -13,12 +13,17 @@ import java.util.List;
 public class Medecin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idMedecin;
+    private int medecin_id;
+    private String nom_medecin;
+    private String prenom_medecin;
+    private String contact;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="medecin")
     @JsonIgnore
-    private List<Rendezvous> rendezvous;
+    private List<RendezVous> rendez_vous;
 
     public Medecin() {
     }
+
+
 }

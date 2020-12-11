@@ -13,12 +13,12 @@ import java.util.List;
 public class Ordonnance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idOrdonnance;
+    private int ordonnance_id;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonIgnore
-    @JoinColumn(foreignKey = @ForeignKey(name = "idRendezVous"))
-    private Rendezvous rendezvous;
+    @JoinColumn(foreignKey = @ForeignKey(name = "rdv_id"))
+    private RendezVous rendez_vous;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="ordonnance")
     @JsonIgnore
@@ -27,7 +27,8 @@ public class Ordonnance {
     public Ordonnance() {
     }
 
-    public Ordonnance(Rendezvous rendezvous) {
-        this.rendezvous = rendezvous;
+
+    public Ordonnance(RendezVous rendez_vous) {
+        this.rendez_vous = rendez_vous;
     }
 }

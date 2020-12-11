@@ -8,27 +8,27 @@
 /*==============================================================*/
 CREATE TABLE IF NOT EXISTS parent
 (
-    idParent            int not null AUTO_INCREMENT primary key,
-    nomParent            varchar(50),
-    prenomParent            varchar(50)
+    parent_id            int not null AUTO_INCREMENT primary key,
+    nom_parent            varchar(50),
+    prenom_parent            varchar(50)
 );
 
 /*==============================================================*/
 /* Table : typeAnimal                                           */
 /*==============================================================*/
-CREATE TABLE IF NOT EXISTS typeAnimal
+CREATE TABLE IF NOT EXISTS typeanimal
 (
-    idTypeAnimal         int not null AUTO_INCREMENT primary key,
-    libTypeAnimal        varchar(100)
+    type_animal_id         int not null AUTO_INCREMENT primary key,
+    lib_type_animal        varchar(100)
 );
 
 CREATE TABLE IF NOT EXISTS animal
 (
-   idAnimal            int not null AUTO_INCREMENT primary key,
-   nomAnimal            varchar(50),
-   sexAnimal            varchar(50),
-   parent int NOT NULL REFERENCES parent(idParent),
-   typeAnimal int NOT NULL REFERENCES typeAnimal(idTypeAnimal)
+   animal_id            int not null AUTO_INCREMENT primary key,
+   nom_animal            varchar(50),
+   sex_animal            varchar(50),
+   parent_id int NOT NULL REFERENCES parent(parent_id),
+   type_animal_id int NOT NULL REFERENCES typeanimal(type_animal_id)
 );
 
 /*==============================================================*/
@@ -36,9 +36,9 @@ CREATE TABLE IF NOT EXISTS animal
 /*==============================================================*/
 CREATE TABLE IF NOT EXISTS medecin
 (
-   idMedecin            int not null AUTO_INCREMENT primary key,
-   nomMedecin           varchar(50),
-   prenomMedecin        varchar(50),
+   medecin_id            int not null AUTO_INCREMENT primary key,
+   nom_medecin           varchar(50),
+   prenom_medecin        varchar(50),
    contact              varchar(50)
 );
 
@@ -47,12 +47,12 @@ CREATE TABLE IF NOT EXISTS medecin
 /*==============================================================*/
 CREATE TABLE IF NOT EXISTS rendezvous
 (
-   idRdv                int not null AUTO_INCREMENT primary key,
-   dateRdv              date unique,
-   HeureDebutRdv           datetime unique,
-   HeureFinRdv          datetime unique,
-   medecin              int NOT NULL REFERENCES medecin (idMedecin),
-   animal               int NOT NULL REFERENCES animal (idAnimal)
+   rdv_id                int not null AUTO_INCREMENT primary key,
+   data_rdv              datetime unique,
+   heure_debut_rdv        datetime unique,
+   heure_fin_rdv          datetime unique,
+   medecin_id              int NOT NULL REFERENCES medecin (medecin_id),
+   animal_id               int NOT NULL REFERENCES animal (animal_id)
 );
 
 /*==============================================================*/
@@ -60,8 +60,8 @@ CREATE TABLE IF NOT EXISTS rendezvous
 /*==============================================================*/
 CREATE TABLE IF NOT EXISTS medicament
 (
-   idMedicament         int not null AUTO_INCREMENT primary key,
-   nomMedicament        varchar(100),
+   medicament_id         int not null AUTO_INCREMENT primary key,
+   nom_medicament        varchar(100),
    description          varchar(250)
 );
 
@@ -70,8 +70,8 @@ CREATE TABLE IF NOT EXISTS medicament
 /*==============================================================*/
 CREATE TABLE IF NOT EXISTS ordonnance
 (
-   idOrdonnance         int not null AUTO_INCREMENT primary key,
-   rdv                  int NOT NULL REFERENCES rendezVous (idRdv)
+   ordonnance_id         int not null AUTO_INCREMENT primary key,
+   rdv_id                  int NOT NULL REFERENCES rendezVous (rdv_id)
 );
 
 
@@ -80,20 +80,23 @@ CREATE TABLE IF NOT EXISTS ordonnance
 /*==============================================================*/
 CREATE TABLE IF NOT EXISTS prescription
 (
-   idPrescription       int not null AUTO_INCREMENT primary key,
-   datePrescription     datetime,
+   prescription_id       int not null AUTO_INCREMENT primary key,
+   date_prescription     varchar(200),
+   frequence_de_prise     varchar(200),
    quantite             int,
-   frequenceDePrise     varchar(200),
-   medicament           int NOT NULL REFERENCES medicament (idMedicament),
-   ordonnance           int NOT NULL REFERENCES ordonnance (idOrdonnance)
+   ordonnance_id           int NOT NULL REFERENCES ordonnance (ordonnance_id),
+   medicament_id           int NOT NULL REFERENCES medicament (medicament_id)
 );
+INSERT INTO typeanimal (type_animal_id,lib_type_animal) VALUES (1,'dqsdfqsd qsdfqs');
+INSERT INTO parent  VALUES (1,'Daniel', 'jordan');
+INSERT INTO animal  VALUES (1,'chien','male', 1, 1);
 
+INSERT INTO medecin  VALUES (1,'Nzali','Herman','752058425');
 
+INSERT INTO rendezvous  VALUES (1,'12-01-16 12:32','12-01-16 12:32','12-01-16 12:32',1,1);
+INSERT INTO ordonnance  VALUES (1,1);
 
+INSERT INTO medicament  VALUES (1,'qdf','qsdff');
 
-
-
-
-
-
+INSERT INTO prescription  VALUES (1,'qsdfssssddsdsdds','qdf qsdfsdf',7,1,1);
 

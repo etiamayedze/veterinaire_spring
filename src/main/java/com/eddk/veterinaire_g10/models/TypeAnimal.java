@@ -7,19 +7,22 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "typeAnimal")
+@Entity(name = "typeanimal")
 @Data
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class TypeAnimal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idTypeAnimal;
+    private int type_animal_id;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy = "typeAnimal")
+    private String lib_type_animal;
+
+    @OneToMany(fetch=FetchType.LAZY, mappedBy="type_animal")
     @JsonIgnore
     private List<Animal> animals;
 
     public TypeAnimal() {
     }
+
 
 }

@@ -6,5 +6,4 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v0/typesanimal")
 public class TypesAnimal {
-
 }
