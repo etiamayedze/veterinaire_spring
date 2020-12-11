@@ -24,5 +24,11 @@ public class TypeAnimal {
     public TypeAnimal() {
     }
 
+    public String getLib_type_animal() {
+        return lib_type_animal;
+    }
 
+    public void setLib_type_animal(String lib_type_animal) {
+        this.lib_type_animal = lib_type_animal;
+    }
 }
