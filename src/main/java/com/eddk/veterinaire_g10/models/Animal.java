@@ -37,34 +37,46 @@ public class Animal {
     	this.sex_animal = sex_animal;
     	this.type_animal = type_animal;
     }
-    
-    public int getAnimal_id() {
-    	return animal_id;
+    public Animal() {
     }
-    public void setAnimal_id(int animal_id) {
-    	this.animal_id = animal_id;
+
+    public Parent getParent() {
+        return parent;
     }
-    
+
+    public void setParent(Parent parent) {
+        this.parent = parent;
+    }
+
     public String getNom_animal() {
-    	return nom_animal;
+        return nom_animal;
     }
+
     public void setNom_animal(String nom_animal) {
-    	this.nom_animal=nom_animal;
+        this.nom_animal = nom_animal;
     }
-    
+
     public String getSex_animal() {
-    	return sex_animal;
+        return sex_animal;
     }
+
     public void setSex_animal(String sex_animal) {
-    	this.sex_animal=sex_animal;
+        this.sex_animal = sex_animal;
     }
-    
+
+    public List<RendezVous> getRendez_vous() {
+        return rendez_vous;
+    }
+
+    public void setRendez_vous(List<RendezVous> rendez_vous) {
+        this.rendez_vous = rendez_vous;
+    }
+
     public TypeAnimal getType_animal() {
-    	return type_animal;
+        return type_animal;
     }
+
     public void setType_animal(TypeAnimal type_animal) {
-    	this.type_animal=type_animal;
+        this.type_animal = type_animal;
     }
-
-
 }

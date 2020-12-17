@@ -27,7 +27,8 @@ public class Parent {
     	this.nom_parent = nom_parent;
     	this.prenom_parent = prenom_parent;
     }
-
+    public Parent() {
+    }
     public int getParent_id() {
     	return parent_id;
     }
