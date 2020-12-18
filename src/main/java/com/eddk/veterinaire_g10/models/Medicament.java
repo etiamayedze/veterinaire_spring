@@ -15,7 +15,7 @@ public class Medicament {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int medicament_id;
 
-    public String name;
+    public String nommedicament;
 
     public String description;
 

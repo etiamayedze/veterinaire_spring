@@ -9,5 +9,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface MedecinRepository extends JpaRepository<Medecin, Integer> {
-    List<Medecin> findByNameLike(@Param("name") String name);
+    List<Medecin> findByNommedecinLike(@Param("name") String name);
 }

@@ -9,7 +9,7 @@
 CREATE TABLE IF NOT EXISTS parent
 (
     parent_id            int not null AUTO_INCREMENT primary key,
-    name            varchar(50),
+    nomparent            varchar(50),
     prenom_parent            varchar(50)
 );
 
@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS typeanimal
 CREATE TABLE IF NOT EXISTS animal
 (
     animal_id            int not null AUTO_INCREMENT primary key,
-    name            varchar(50),
+    nomanimal            varchar(50),
     sex_animal            varchar(50),
     parent_id int NOT NULL REFERENCES parent(parent_id),
     type_animal_id int NOT NULL REFERENCES typeanimal(type_animal_id)
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS animal
 CREATE TABLE IF NOT EXISTS medecin
 (
     medecin_id            int not null AUTO_INCREMENT primary key,
-    name           varchar(50),
+    nommedecin           varchar(50),
     prenom_medecin        varchar(50),
     contact              varchar(50)
 );
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS rendezvous
 CREATE TABLE IF NOT EXISTS medicament
 (
     medicament_id         int not null AUTO_INCREMENT primary key,
-    name        varchar(100),
+    nommedicament        varchar(100),
     description          varchar(250)
 );
 
@@ -102,7 +102,7 @@ VALUES
 (4,'veau'),
 (5,'chat');
 
-INSERT INTO parent (parent_id,name,prenom_parent)
+INSERT INTO parent (parent_id,nomparent,prenom_parent)
 VALUES
 (1,'Popo', 'Marx'),
 (2,'Doudou', 'Scooby'),
@@ -118,7 +118,7 @@ VALUES
 (4,'Toto','female', 4, 3),
 (5,'Tati','male', 2, 4);
 
-INSERT INTO medecin (medecin_id,name,prenom_medecin,contact)
+INSERT INTO medecin (medecin_id,nommedecin,prenom_medecin,contact)
 VALUES
 (1,'Kossi','Etiam','0601548976'),
 (2,'Nibaruta','Khelia','0669854126'),

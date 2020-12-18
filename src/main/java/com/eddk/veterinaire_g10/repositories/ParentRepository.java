@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ParentRepository extends JpaRepository<Parent, Integer> {
-    List<Parent> findByNameLike(@Param("name") String name);
+    List<Parent> findByNomparentLike(@Param("nomparent") String nomparent);
 
 }

@@ -59,4 +59,9 @@ public class ParentsController {
 		return ResponseEntity.ok().build();
 
 	}
+
+	@GetMapping(value = "/recherche/{recherche}")
+	public List<Parent> searchForEntity(@PathVariable String recherche) {
+		return parentRepository.findByNomparentLike("%"+recherche+"%");
+	}
 }

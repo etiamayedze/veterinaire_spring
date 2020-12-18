@@ -61,7 +61,7 @@ public class AnimalsController {
 
 	@GetMapping(value = "/recherche/{recherche}")
 	public List<Animal> searchForEntity(@PathVariable String recherche) {
-		return animalRepository.findByNameLike("%"+recherche+"%");
+		return animalRepository.findByNomanimalLike("%"+recherche+"%");
 	}
     
 }

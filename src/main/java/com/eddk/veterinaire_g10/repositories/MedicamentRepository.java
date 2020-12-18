@@ -9,5 +9,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface MedicamentRepository extends JpaRepository<Medicament, Integer>, JpaSpecificationExecutor<Medicament>, CrudRepository<Medicament, Integer> {
-    List<Medicament> findByNameLike(@Param("name") String name);
+    List<Medicament> findByNommedicamentLike(@Param("Nommedicament") String Nommedicament);
 }

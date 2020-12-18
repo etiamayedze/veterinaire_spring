@@ -9,5 +9,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface TypeAnimalRepository extends JpaRepository<TypeAnimal, Integer> {
-    List<TypeAnimal> findByLibtypeanimalLike(@Param("name") String name);
+    List<TypeAnimal> findByLibtypeanimalLike(@Param("libtypeanimal") String libtypeanimal);
 }

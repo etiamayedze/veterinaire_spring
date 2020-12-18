@@ -48,7 +48,7 @@ public class MedicamentsController {
 
     @GetMapping(value = "/recherche/{recherche}")
     public List<Medicament> searchForEntity(@PathVariable String recherche) {
-        return medicamentRepository.findByNameLike("%"+recherche+"%");
+        return medicamentRepository.findByNommedicamentLike("%"+recherche+"%");
     }
 
 

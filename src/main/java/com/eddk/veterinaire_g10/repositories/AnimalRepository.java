@@ -8,6 +8,6 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface AnimalRepository  extends JpaRepository<Animal, Integer>  {
-    List<Animal> findByNameLike(@Param("name") String name);
+    List<Animal> findByNomanimalLike(@Param("name") String name);
 
 }

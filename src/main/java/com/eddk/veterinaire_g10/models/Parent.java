@@ -15,7 +15,7 @@ public class Parent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int parent_id;
 
-    private String name;
+    private String nomparent;
     private String prenom_parent;
 
     @OneToMany(mappedBy="parent")
@@ -24,7 +24,7 @@ public class Parent {
 
     public Parent(int parent_id,String nom_parent,String prenom_parent){
         this.parent_id = parent_id;
-        this.name = nom_parent;
+        this.nomparent = nom_parent;
         this.prenom_parent = prenom_parent;
     }
     public Parent() {
@@ -37,10 +37,10 @@ public class Parent {
     }
 
     public String getNom_parent() {
-        return name;
+        return nomparent;
     }
     public void setNom_parent(String nom_parent) {
-        this.name=nom_parent;
+        this.nomparent=nom_parent;
     }
 
     public String getPrenom_parent() {

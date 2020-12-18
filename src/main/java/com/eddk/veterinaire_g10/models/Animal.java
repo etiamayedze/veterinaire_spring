@@ -20,7 +20,7 @@ public class Animal {
     @JoinColumn(foreignKey = @ForeignKey(name = "parent_id"))
     private Parent parent;
 
-    private String name;
+    private String nomanimal;
     private String sex_animal;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="animal")
@@ -33,7 +33,7 @@ public class Animal {
 
     public Animal(int animal_id,String nom_animal,String sex_animal,TypeAnimal type_animal) {
         this.animal_id = animal_id;
-        this.name = nom_animal;
+        this.nomanimal = nom_animal;
         this.sex_animal = sex_animal;
         this.type_animal = type_animal;
     }
@@ -49,11 +49,11 @@ public class Animal {
     }
 
     public String getNom_animal() {
-        return name;
+        return nomanimal;
     }
 
     public void setNom_animal(String nom_animal) {
-        this.name = nom_animal;
+        this.nomanimal = nom_animal;
     }
 
     public String getSex_animal() {
