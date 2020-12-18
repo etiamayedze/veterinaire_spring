@@ -15,7 +15,7 @@ public class Animal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int animal_id;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(foreignKey = @ForeignKey(name = "parent_id"))
     private Parent parent;
@@ -26,7 +26,7 @@ public class Animal {
     @OneToMany(fetch=FetchType.LAZY, mappedBy="animal")
     private List<RendezVous> rendez_vous;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(foreignKey = @ForeignKey(name = "type_animal_id"))
     private TypeAnimal type_animal;
