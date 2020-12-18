@@ -18,7 +18,7 @@ public class Parent {
     private String nom_parent;
     private String prenom_parent;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="parent")
+    @OneToMany(mappedBy="parent")
     @JsonIgnore
     private List<Animal> animals;
 

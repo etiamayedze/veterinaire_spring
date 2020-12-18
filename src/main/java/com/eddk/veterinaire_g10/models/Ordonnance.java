@@ -15,12 +15,12 @@ public class Ordonnance {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ordonnance_id;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(foreignKey = @ForeignKey(name = "rdv_id"))
     private RendezVous rendez_vous;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="ordonnance")
+    @OneToMany(mappedBy="ordonnance")
     @JsonIgnore
     private List<Prescription> prescriptions;
 

@@ -15,12 +15,12 @@ public class RendezVous {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int rdv_id;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(foreignKey = @ForeignKey(name = "animal_id"))
     private Animal animal;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JsonIgnore
     @JoinColumn(foreignKey = @ForeignKey(name = "medecin_id"))
     private Medecin medecin;

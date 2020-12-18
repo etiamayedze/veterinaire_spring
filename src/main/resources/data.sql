@@ -88,6 +88,18 @@ CREATE TABLE IF NOT EXISTS prescription
    medicament_id           int NOT NULL REFERENCES medicament (medicament_id)
 );
 
+CREATE TABLE IF NOT EXISTS user
+(
+   id       int not null AUTO_INCREMENT primary key,
+   username     varchar(200),
+   password     varchar(10)
+);
+
+CREATE TABLE IF NOT EXISTS role
+(
+   id       int not null AUTO_INCREMENT primary key,
+   name     varchar(10)
+);
 
 
 INSERT INTO typeanimal (type_animal_id,lib_type_animal) VALUES (1,'dqsdfqsd qsdfqs');
@@ -109,7 +121,7 @@ INSERT INTO ordonnance  VALUES (2,2);
 
 INSERT INTO medicament  VALUES (1,'qdf','qsdff');
 INSERT INTO medicament  VALUES (2,'doliprane','abcde');
+INSERT INTO medicament VALUES (3,'lou lou', 'lou lou');
+
 
 INSERT INTO prescription  VALUES (1,'12-01-16 12:32','qdf qsdfsdf',7,1,1);
-
-
