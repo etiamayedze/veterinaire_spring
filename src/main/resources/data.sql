@@ -87,16 +87,6 @@ CREATE TABLE IF NOT EXISTS prescription
    ordonnance_id           int NOT NULL REFERENCES ordonnance (ordonnance_id),
    medicament_id           int NOT NULL REFERENCES medicament (medicament_id)
 );
-INSERT INTO typeanimal (type_animal_id,lib_type_animal) VALUES (1,'dqsdfqsd qsdfqs');
-INSERT INTO parent  VALUES (1,'Daniel', 'jordan');
-INSERT INTO animal  VALUES (1,'chien','male', 1, 1);
 
-INSERT INTO medecin  VALUES (1,'Nzali','Herman','752058425');
 
-INSERT INTO rendezvous  VALUES (1,'12-01-16 12:32','12-01-16 12:32','12-01-16 12:32',1,1);
-INSERT INTO ordonnance  VALUES (1,1);
-
-INSERT INTO medicament  VALUES (1,'qdf','qsdff');
-
-INSERT INTO prescription  VALUES (1,'qsdfssssddsdsdds','qdf qsdfsdf',7,1,1);
-
+// Insertion dans la base de donnée
