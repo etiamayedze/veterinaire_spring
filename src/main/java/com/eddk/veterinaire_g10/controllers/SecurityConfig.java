@@ -18,12 +18,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Value("${auth0.audience}")
     private String audience;
+
     @Value("${spring.security.oauth2.resourceserver.jwt.issuer-uri}")
     private String issuer;
 
     @Bean
     JwtDecoder jwtDecoder() {
         NimbusJwtDecoder jwtDecoder = (NimbusJwtDecoder) JwtDecoders.fromOidcIssuerLocation(issuer);
+
         OAuth2TokenValidator<Jwt> audienceValidator = new AudienceValidator(audience);
         OAuth2TokenValidator<Jwt> withIssuer = JwtValidators.createDefaultWithIssuer(issuer);
         OAuth2TokenValidator<Jwt> withAudience = new DelegatingOAuth2TokenValidator<>(withIssuer, audienceValidator);
@@ -32,20 +34,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-//    @Bean
-//    public JwtDecoder jwtDecoder() {
-//        NimbusJwtDecoder jwtDecoder = (NimbusJwtDecoder) JwtDecoders.fromOidcIssuerLocation(issuer);
-//        OAuth2TokenValidator<Jwt> audienceValidator = new AudienceValidator(audience);OAuth2TokenValidator<Jwt> withIssuer = JwtValidators.createDefaultWithIssuer(issuer);
-//        OAuth2TokenValidator<Jwt> withAudience = new DelegatingOAuth2TokenValidator<>(withIssuer, audienceValidator);
-//        jwtDecoder.setJwtValidator(withAudience);
-//        return jwtDecoder;
-//    }
+
+        OAuth2TokenValidator<Jwt> audienceValidator = new AudienceValidator(audience);
+        OAuth2TokenValidator<Jwt> withIssuer = JwtValidators.createDefaultWithIssuer(issuer);
+        OAuth2TokenValidator<Jwt> withAudience = new DelegatingOAuth2TokenValidator<>(withIssuer, audienceValidator);
+
+        jwtDecoder.setJwtValidator(withAudience);
+
+        return jwtDecoder;
+    }
+
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
                 .mvcMatchers("/api/v0/medecins").permitAll()
+
                 .mvcMatchers("/api/v0/animals").permitAll()
                 .mvcMatchers("/api/v0/rendezvous").permitAll()
                 .mvcMatchers("/api/v0/medicaments").permitAll()
@@ -53,6 +58,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers("/api/v0/parents").permitAll()
                 .mvcMatchers("/api/v0/prescription").permitAll()
                 .mvcMatchers("/api/v0/typeanimal").permitAll()
+
+                .mvcMatchers("/api/v0/animals").hasAuthority("SCOPE_read:messages")
+                .mvcMatchers("/api/v0/rendezvous").hasAuthority("SCOPE_read:messages")
+                .mvcMatchers("/api/v0/medicaments").hasAuthority("SCOPE_read:messages")
+                .mvcMatchers("/api/v0/ordonnances").hasAuthority("SCOPE_read:messages")
+                .mvcMatchers("/api/v0/parents").hasAuthority("SCOPE_read:messages")
+                .mvcMatchers("/api/v0/prescription").hasAuthority("SCOPE_read:messages")
+                .mvcMatchers("/api/v0/typeanimal").hasAuthority("SCOPE_read:messages")
+
                 .and().cors()
                 .and().oauth2ResourceServer().jwt()
         ;

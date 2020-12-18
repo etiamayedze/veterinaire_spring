@@ -17,7 +17,7 @@ public class TypeAnimal {
 
     private String lib_type_animal;
 
-    @OneToMany(fetch=FetchType.LAZY, mappedBy="type_animal")
+    @OneToMany(mappedBy="type_animal")
     @JsonIgnore
     private List<Animal> animals;
 
