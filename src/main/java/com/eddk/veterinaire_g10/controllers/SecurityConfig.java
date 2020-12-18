@@ -59,14 +59,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .mvcMatchers("/api/v0/prescription").permitAll()
                 .mvcMatchers("/api/v0/typeanimal").permitAll()
 
-                .mvcMatchers("/api/v0/animals").hasAuthority("SCOPE_read:messages")
-                .mvcMatchers("/api/v0/rendezvous").hasAuthority("SCOPE_read:messages")
-                .mvcMatchers("/api/v0/medicaments").hasAuthority("SCOPE_read:messages")
-                .mvcMatchers("/api/v0/ordonnances").hasAuthority("SCOPE_read:messages")
-                .mvcMatchers("/api/v0/parents").hasAuthority("SCOPE_read:messages")
-                .mvcMatchers("/api/v0/prescription").hasAuthority("SCOPE_read:messages")
-                .mvcMatchers("/api/v0/typeanimal").hasAuthority("SCOPE_read:messages")
-
                 .and().cors()
                 .and().oauth2ResourceServer().jwt()
         ;
