@@ -19,7 +19,6 @@ public class Prescription {
     private String frequence_de_prise;
     private int quantite;
 
-
     @ManyToOne
     @JoinColumn(foreignKey = @ForeignKey(name = "ordonnance_id"))
     private Ordonnance ordonnance;

@@ -55,30 +55,4 @@ public class MedicamentsController {
 
 
 
-
-
-
-
-
-
-
-
-/*
-
-    /*
-    public Medicament search(@SearchSpec specs: Specification<Medicament>): ResponseEntity<List<Medicament>> {
-        return ResponseEntity(medicamentRepository.findAll(Specification.where(specs)), HttpStatus.OK);
-    }
-
-    /*@GetMapping("searchUrl")
-    fun yourFunctionNameHere(@SearchSpec specs: Specification<Medicament>): ResponseEntity<List<Medicament>> {
-        return ResponseEntity(medicamentRepository.findAll(Specification.where(specs)), HttpStatus.OK);
-    }
-
-    /*@RequestMapping()
-    public List<Medicament> getMedicamentsByName(@PathVariable String name){
-        return medicamentRepository.getMedicamentsByName(nom_medicament);
-    }*/
-
-
 }

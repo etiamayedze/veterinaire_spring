@@ -59,43 +59,9 @@ public class AnimalsController {
 
 	}
 
-//	@Autowired
-//	AnimalRepository animalrepository;
-//
-//	@GetMapping("/getAllAnimals")
-//	public List<Animal>getAllAnimals()
-//	{
-//		return animalrepository.findAll();
-//	}
-//
-//	@GetMapping("/getAnimalById/{animal_id}")
-//	public Optional<Animal>getAnimalById(@PathVariable(value="animal_id")int animal_id)
-//	{
-//		return animalrepository.findById(animal_id);
-//	}
-//
-//	@PostMapping("/addAnimal")
-//	public Animal addAnimal(@RequestBody Animal animal)
-//	{
-//		return animalrepository.save(animal);
-//	}
-//
-//	@PutMapping("/updateAnimal/{animal_id}")
-//	public Animal updateAnimal(@PathVariable(value="animal_id") int animal_id,@RequestBody Animal animalDetails)
-//	{
-//		Optional<Animal>animal=animalrepository.findById(animal_id);
-//		Animal animal_new=animal.get();
-//		animal_new.setNom_animal(animalDetails.getNom_animal());
-//		animal_new.setSex_animal(animalDetails.getSex_animal());
-//		animal_new.setType_animal(animalDetails.getType_animal());
-//		return animalrepository.save(animal_new);
-//	}
-//
-//	@DeleteMapping("/deleteAnimal/{animal_id}")
-//	public void deleteBook(@PathVariable(value="animal_id")int animal_id) {
-//		Optional<Animal>animal=animalrepository.findById(animal_id);
-//		Animal animal_new=animal.get();
-//		animalrepository.delete(animal_new);
-//	}
+	@GetMapping(value = "/recherche/{recherche}")
+	public List<Animal> searchForEntity(@PathVariable String recherche) {
+		return animalRepository.findByNameLike("%"+recherche+"%");
+	}
     
 }

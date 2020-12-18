@@ -48,4 +48,9 @@ public class MedecinsController {
         return ResponseEntity.ok().build();
 
     }
+
+    @GetMapping(value = "/recherche/{recherche}")
+    public List<Medecin> searchForEntity(@PathVariable String recherche) {
+        return medecinRepository.findByNameLike("%"+recherche+"%");
+    }
 }

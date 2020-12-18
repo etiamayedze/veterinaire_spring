@@ -12,7 +12,6 @@ import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Ordonnance {
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ordonnance_id;

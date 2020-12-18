@@ -34,6 +34,9 @@ public class RendezVous {
     private Date heure_debut_rdv;
     private Date heure_fin_rdv;
 
+    public RendezVous() {
+    }
+
     public RendezVous(Animal animal, Medecin medecin, List<Ordonnance> ordonnances, Date date_rdv, Date heure_debut_rdv, Date heure_fin_rdv) {
         this.animal = animal;
         this.medecin = medecin;
@@ -98,10 +101,5 @@ public class RendezVous {
     public void setHeure_fin_rdv(Date heure_fin_rdv) {
         this.heure_fin_rdv = heure_fin_rdv;
     }
-
-    public RendezVous() {
-    }
-
-
 
 }

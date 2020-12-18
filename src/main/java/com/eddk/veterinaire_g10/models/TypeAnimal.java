@@ -15,7 +15,7 @@ public class TypeAnimal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int type_animal_id;
 
-    private String lib_type_animal;
+    private String libtypeanimal;
 
     @OneToMany(mappedBy="type_animal")
     @JsonIgnore
@@ -25,10 +25,10 @@ public class TypeAnimal {
     }
 
     public String getLib_type_animal() {
-        return lib_type_animal;
+        return libtypeanimal;
     }
 
     public void setLib_type_animal(String lib_type_animal) {
-        this.lib_type_animal = lib_type_animal;
+        this.libtypeanimal = lib_type_animal;
     }
 }

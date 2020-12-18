@@ -16,7 +16,7 @@ public class Medecin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int medecin_id;
-    private String nom_medecin;
+    private String name;
     private String prenom_medecin;
     private String contact;
 
@@ -28,11 +28,11 @@ public class Medecin {
     }
 
     public String getNom_medecin() {
-        return nom_medecin;
+        return name;
     }
 
     public void setNom_medecin(String nom_medecin) {
-        this.nom_medecin = nom_medecin;
+        this.name = nom_medecin;
     }
 
     public String getPrenom_medecin() {

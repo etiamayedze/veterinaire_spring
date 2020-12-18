@@ -1,6 +1,7 @@
 package com.eddk.veterinaire_g10.controllers;
 
 import com.eddk.veterinaire_g10.exception.RessourceNotFoundException;
+import com.eddk.veterinaire_g10.models.Medicament;
 import com.eddk.veterinaire_g10.models.TypeAnimal;
 import com.eddk.veterinaire_g10.repositories.TypeAnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,4 +47,9 @@ public class TypesAnimal {
         return ResponseEntity.ok().build();
 
     }
+    @GetMapping(value = "/recherche/{recherche}")
+    public List<TypeAnimal> searchForEntity(@PathVariable String recherche) {
+        return typeAnimalRepository.findByLibtypeanimalLike("%"+recherche+"%");
+    }
 }
+

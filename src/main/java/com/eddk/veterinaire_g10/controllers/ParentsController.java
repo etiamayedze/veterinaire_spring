@@ -59,41 +59,4 @@ public class ParentsController {
 		return ResponseEntity.ok().build();
 
 	}
-//	@Autowired
-//	ParentRepository parentRepository;
-//
-//	@GetMapping("/getAllParents")
-//	public List<Parent>getAllParents()
-//	{
-//		return parentRepository.findAll();
-//	}
-//
-//	@GetMapping("/getParentById/{parent_id}")
-//	public Optional<Parent>getParentById(@PathVariable(value="parent_id")int parent_id)
-//	{
-//		return parentRepository.findById(parent_id);
-//	}
-//
-//	@PostMapping("/addParent")
-//	public Parent addParent(@RequestBody Parent parent)
-//	{
-//		return parentRepository.save(parent);
-//	}
-//
-//	@PutMapping("/updateParent/{parent_id}")
-//	public Parent updateParent(@PathVariable(value="parent_id") int parent_id,@RequestBody Parent parentDetails)
-//	{
-//		Optional<Parent>parent=parentRepository.findById(parent_id);
-//		Parent parent_new=parent.get();
-//		parent_new.setNom_parent(parentDetails.getNom_parent());
-//		parent_new.setPrenom_parent(parentDetails.getPrenom_parent());
-//		return parentRepository.save(parent_new);
-//	}
-//
-//	@DeleteMapping("/deleteParent/{parent_id}")
-//	public void deleteBook(@PathVariable(value="parent_id")int parent_id) {
-//		Optional<Parent>parent=parentRepository.findById(parent_id);
-//		Parent parent_new=parent.get();
-//		parentRepository.delete(parent_new);
-//	}
 }
