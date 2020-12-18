@@ -93,6 +93,7 @@ CREATE TABLE IF NOT EXISTS prescription
 );
 
 
+
 INSERT INTO typeanimal (type_animal_id,lib_type_animal)
 VALUES
 	(1,'chien'),
@@ -183,12 +184,11 @@ INSERT INTO animal  VALUES (2,'chat','male', 2, 2);
 INSERT INTO medecin  VALUES (1,'Nzali','Herman','752058425');
 INSERT INTO medecin  VALUES (2,'Etiam','Denis','75204554558425');
 
-<<<<<<< HEAD
 INSERT INTO rendezvous  VALUES (1,'12-01-16 12:32','12-01-16 12:32','12-01-16 12:32',1,1);
 INSERT INTO rendezvous  VALUES (2,'12-01-17 12:34','12-01-17 12:37','12-01-16 12:32',2,2);
 INSERT INTO ordonnance  VALUES (1,1);
 INSERT INTO ordonnance  VALUES (2,2);
-=======
+
 INSERT INTO rendezvous  VALUES (1,'2020-08-17 12:32','2020-08-17 12:32','2020-08-17 12:32',1,1);
 INSERT INTO rendezvous  VALUES (2,'2020-09-16 09:30','2020-09-16 09:30','2020-09-16 10:00',1,1);
 INSERT INTO rendezvous  VALUES (3,'2020-11-29 14:00','2020-11-29 14:00','2020-11-29 14:30',1,1);
@@ -197,7 +197,7 @@ INSERT INTO ordonnance  VALUES (1,1);
 INSERT INTO ordonnance  VALUES (2,1);
 INSERT INTO ordonnance  VALUES (3,1);
 INSERT INTO ordonnance  VALUES (4,1);
->>>>>>> etiamv2
+
 
 INSERT INTO medicament  VALUES (1,'qdf','qsdff');
 INSERT INTO medicament  VALUES (2,'doliprane','abcde');

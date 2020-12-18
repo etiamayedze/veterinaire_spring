@@ -11,4 +11,3 @@ public class RessourceNotFoundException extends RuntimeException {
         super(message);
     }
 }
-
