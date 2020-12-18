@@ -4,7 +4,7 @@
 /*==============================================================*/
 
 /*==============================================================*/
-/* Table : animal                                               */
+/* Table : parent                                               */
 /*==============================================================*/
 CREATE TABLE IF NOT EXISTS parent
 (
@@ -21,6 +21,10 @@ CREATE TABLE IF NOT EXISTS typeanimal
     type_animal_id         int not null AUTO_INCREMENT primary key,
     lib_type_animal        varchar(100)
 );
+
+/*==============================================================*/
+/* Table : animal                                          */
+/*==============================================================*/
 
 CREATE TABLE IF NOT EXISTS animal
 (
@@ -87,41 +91,5 @@ CREATE TABLE IF NOT EXISTS prescription
    ordonnance_id           int NOT NULL REFERENCES ordonnance (ordonnance_id),
    medicament_id           int NOT NULL REFERENCES medicament (medicament_id)
 );
-
-CREATE TABLE IF NOT EXISTS user
-(
-   id       int not null AUTO_INCREMENT primary key,
-   username     varchar(200),
-   password     varchar(10)
-);
-
-CREATE TABLE IF NOT EXISTS role
-(
-   id       int not null AUTO_INCREMENT primary key,
-   name     varchar(10)
-);
-
-
-INSERT INTO typeanimal (type_animal_id,lib_type_animal) VALUES (1,'dqsdfqsd qsdfqs');
-INSERT INTO typeanimal (type_animal_id,lib_type_animal) VALUES (2,'ioioo iioou');
-
-INSERT INTO parent  VALUES (1,'Daniel', 'jordan');
-INSERT INTO parent  VALUES (2,'Stephane', 'boris');
-
-INSERT INTO animal  VALUES (1,'chien','male', 1, 1);
-INSERT INTO animal  VALUES (2,'chat','male', 2, 2);
-
-INSERT INTO medecin  VALUES (1,'Nzali','Herman','752058425');
-INSERT INTO medecin  VALUES (2,'Etiam','Denis','75204554558425');
-
-INSERT INTO rendezvous  VALUES (1,'12-01-16 12:32','12-01-16 12:32','12-01-16 12:32',1,1);
-INSERT INTO rendezvous  VALUES (2,'12-01-17 12:34','12-01-17 12:37','12-01-16 12:32',2,2);
-INSERT INTO ordonnance  VALUES (1,1);
-INSERT INTO ordonnance  VALUES (2,2);
-
-INSERT INTO medicament  VALUES (1,'qdf','qsdff');
-INSERT INTO medicament  VALUES (2,'doliprane','abcde');
-INSERT INTO medicament VALUES (3,'lou lou', 'lou lou');
-
 
 INSERT INTO prescription  VALUES (1,'12-01-16 12:32','qdf qsdfsdf',7,1,1);

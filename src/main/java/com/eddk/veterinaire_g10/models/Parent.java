@@ -22,9 +22,32 @@ public class Parent {
     @JsonIgnore
     private List<Animal> animals;
 
-    public Parent(){
+    public Parent(int parent_id,String nom_parent,String prenom_parent){
+    	this.parent_id = parent_id;
+    	this.nom_parent = nom_parent;
+    	this.prenom_parent = prenom_parent;
     }
-
-
+    public Parent() {
+    }
+    public int getParent_id() {
+    	return parent_id;
+    }
+    public void setParent_id(int parent_id) {
+    	this.parent_id = parent_id;
+    }
+    
+    public String getNom_parent() {
+    	return nom_parent;
+    }
+    public void setNom_parent(String nom_parent) {
+    	this.nom_parent=nom_parent;
+    }
+    
+    public String getPrenom_parent() {
+    	return prenom_parent;
+    }
+    public void setPrenom_parent(String prenom_parent) {
+    	this.prenom_parent=prenom_parent;
+    }
 
 }
