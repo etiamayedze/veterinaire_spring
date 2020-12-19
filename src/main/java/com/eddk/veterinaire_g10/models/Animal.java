@@ -31,9 +31,9 @@ public class Animal {
     @JoinColumn(foreignKey = @ForeignKey(name = "type_animal_id"))
     private TypeAnimal type_animal;
 
-    public Animal(int animal_id,String nom_animal,String sex_animal,TypeAnimal type_animal) {
+    public Animal(int animal_id,String sexanimal,String sex_animal,TypeAnimal type_animal) {
         this.animal_id = animal_id;
-        this.nomanimal = nom_animal;
+        this.nomanimal = sexanimal;
         this.sex_animal = sex_animal;
         this.type_animal = type_animal;
     }
@@ -52,8 +52,8 @@ public class Animal {
         return nomanimal;
     }
 
-    public void setNom_animal(String nom_animal) {
-        this.nomanimal = nom_animal;
+    public void setNom_animal(String sexanimal) {
+        this.nomanimal = sexanimal;
     }
 
     public String getSex_animal() {

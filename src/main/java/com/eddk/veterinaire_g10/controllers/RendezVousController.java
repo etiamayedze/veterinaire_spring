@@ -1,5 +1,6 @@
 package com.eddk.veterinaire_g10.controllers;
 
+import com.eddk.veterinaire_g10.models.Prescription;
 import com.eddk.veterinaire_g10.models.RendezVous;
 import com.eddk.veterinaire_g10.repositories.OrdonnanceRepository;
 import com.eddk.veterinaire_g10.repositories.RendezvousRepository;
@@ -34,21 +35,9 @@ public class RendezVousController {
     }
 
 
-    //get rdv by Date
-   // public RendezVous getRendezVousByDate(@PathVariable("date") String date_rdv){
-
-    //    return this.rendezvousRepository.findAll();
-
-
-   // }
-
-
-    //create rdv
     @PostMapping
-    public RendezVous createRendezVous(@RequestBody RendezVous rendezVous){
+    public RendezVous create(@RequestBody RendezVous rendezvous) { return rendezvousRepository.saveAndFlush(rendezvous); }
 
-        return this.rendezvousRepository.save(rendezVous);
-    }
 
 
     //update rdv

@@ -22,12 +22,10 @@ public class RendezVous {
     private Animal animal;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(foreignKey = @ForeignKey(name = "medecin_id"))
     private Medecin medecin;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="rendez_vous")
-    @JsonIgnore
     private List<Ordonnance> ordonnances;
 
     private Date date_rdv;

@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import com.eddk.veterinaire_g10.exception.RessourceNotFoundException;
+import com.eddk.veterinaire_g10.models.Medecin;
+import com.eddk.veterinaire_g10.models.Medicament;
 import com.eddk.veterinaire_g10.models.TypeAnimal;
 import com.eddk.veterinaire_g10.repositories.TypeAnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,12 +38,10 @@ public class ParentsController {
 	public Parent getParentById(@PathVariable(value = "id") Integer parent_id){
 		return this.parentRepository.findById(parent_id).orElseThrow(()-> new RessourceNotFoundException("Parent animal not found with id :"+parent_id));
 	}
-	//create Parent animal
+
 	@PostMapping
-	public Parent createParent(@RequestBody Parent parent){
-		return this.parentRepository.save(parent);
-	}
-	// update Parent animal
+	public Parent create(@RequestBody Parent parent) { return parentRepository.saveAndFlush(parent); }
+
 	@PutMapping("/{id}")
 	public Parent updateParent(@RequestBody Parent parent, @PathVariable ("id") Integer parent_id){
 		Parent existingType = this.parentRepository.findById(parent_id)
@@ -59,6 +59,7 @@ public class ParentsController {
 		return ResponseEntity.ok().build();
 
 	}
+
 
 	@GetMapping(value = "/recherche/{recherche}")
 	public List<Parent> searchForEntity(@PathVariable String recherche) {

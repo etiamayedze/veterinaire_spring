@@ -2,7 +2,9 @@ package com.eddk.veterinaire_g10.controllers;
 
 import com.eddk.veterinaire_g10.exception.RessourceNotFoundException;
 import com.eddk.veterinaire_g10.models.Medecin;
+import com.eddk.veterinaire_g10.models.Medicament;
 import com.eddk.veterinaire_g10.repositories.MedecinRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,17 +29,14 @@ public class MedecinsController {
     //create medecin
     @PostMapping
     public Medecin createMedecin(@RequestBody Medecin medecin){
-        return this.medecinRepository.save(medecin);
+        return this.medecinRepository.saveAndFlush(medecin);
     }
     // update medecin
-    @PutMapping("/{id}")
-    public Medecin updateMedecin(@RequestBody Medecin medecin, @PathVariable ("id") Integer medecin_id){
-        Medecin existingMedecin = this.medecinRepository.findById(medecin_id)
-                .orElseThrow(()-> new RessourceNotFoundException("Medecin not found with id :"+medecin_id));
-        existingMedecin.setNomMedecin(medecin.getNomMedecin());
-        existingMedecin.setPrenom_medecin(medecin.getPrenom_medecin());
-        existingMedecin.setContact(medecin.getContact());
-        return this.medecinRepository.save(existingMedecin);
+    @RequestMapping(value = "{id}", method=RequestMethod.PUT)
+    public Medecin update(@PathVariable int id, @RequestBody Medecin medecin){
+        Medecin existingMedecin = medecinRepository.getOne(id);
+        BeanUtils.copyProperties(medecin, existingMedecin, "medecin_id");
+        return medecinRepository.saveAndFlush(existingMedecin);
     }
     // Delete medecin by id
     @DeleteMapping("/{id}")

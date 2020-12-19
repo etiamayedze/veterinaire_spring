@@ -4,18 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import com.eddk.veterinaire_g10.exception.RessourceNotFoundException;
+import com.eddk.veterinaire_g10.models.Medecin;
 import com.eddk.veterinaire_g10.models.TypeAnimal;
 import com.eddk.veterinaire_g10.repositories.TypeAnimalRepository;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.eddk.veterinaire_g10.models.Animal;
 import com.eddk.veterinaire_g10.repositories.AnimalRepository;
@@ -41,13 +36,13 @@ public class AnimalsController {
 		return this.animalRepository.save(animal);
 	}
 	// update type animal
-	@PutMapping("/{id}")
-	public Animal updateAnimal(@RequestBody Animal animal, @PathVariable ("id") Integer animal_id){
-		Animal existingType = this.animalRepository.findById(animal_id)
-				.orElseThrow(()-> new RessourceNotFoundException("Type animal not found with id :"+animal_id));
-		existingType.setNom_animal(animal.getNom_animal());
-		existingType.setSex_animal(animal.getSex_animal());
-		return this.animalRepository.save(existingType);
+
+
+	@RequestMapping(value = "{id}", method= RequestMethod.PUT)
+	public Animal update(@PathVariable int id, @RequestBody Animal animal){
+		Animal existingAnimal = animalRepository.getOne(id);
+		BeanUtils.copyProperties(animal, existingAnimal, "animal_id");
+		return animalRepository.saveAndFlush(existingAnimal);
 	}
 	// Delete type animal by id
 	@DeleteMapping("/{id}")
