@@ -28,9 +28,9 @@ public class RendezVous {
     @OneToMany(fetch=FetchType.LAZY, mappedBy="rendez_vous")
     private List<Ordonnance> ordonnances;
 
-    private Date date_rdv;
-    private Date heure_debut_rdv;
-    private Date heure_fin_rdv;
+    private Date daterdv;
+    private Date heuredebutrdv;
+    private Date heurefinrdv;
 
     public RendezVous() {
     }
@@ -39,9 +39,9 @@ public class RendezVous {
         this.animal = animal;
         this.medecin = medecin;
         this.ordonnances = ordonnances;
-        this.date_rdv = date_rdv;
-        this.heure_debut_rdv = heure_debut_rdv;
-        this.heure_fin_rdv = heure_fin_rdv;
+        this.daterdv = date_rdv;
+        this.heuredebutrdv = heure_debut_rdv;
+        this.heurefinrdv = heure_fin_rdv;
     }
 
     public int getRdv_id() {
@@ -77,27 +77,27 @@ public class RendezVous {
     }
 
     public Date getDate_rdv() {
-        return date_rdv;
+        return daterdv;
     }
 
     public void setDate_rdv(Date date_rdv) {
-        this.date_rdv = date_rdv;
+        this.daterdv = date_rdv;
     }
 
     public Date getHeure_debut_rdv() {
-        return heure_debut_rdv;
+        return heuredebutrdv;
     }
 
     public void setHeure_debut_rdv(Date heure_debut_rdv) {
-        this.heure_debut_rdv = heure_debut_rdv;
+        this.heuredebutrdv = heure_debut_rdv;
     }
 
     public Date getHeure_fin_rdv() {
-        return heure_fin_rdv;
+        return heurefinrdv;
     }
 
     public void setHeure_fin_rdv(Date heure_fin_rdv) {
-        this.heure_fin_rdv = heure_fin_rdv;
+        this.heurefinrdv = heure_fin_rdv;
     }
 
 }

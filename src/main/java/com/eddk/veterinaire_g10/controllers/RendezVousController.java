@@ -2,12 +2,14 @@ package com.eddk.veterinaire_g10.controllers;
 
 import com.eddk.veterinaire_g10.models.Prescription;
 import com.eddk.veterinaire_g10.models.RendezVous;
+import com.eddk.veterinaire_g10.models.TypeAnimal;
 import com.eddk.veterinaire_g10.repositories.OrdonnanceRepository;
 import com.eddk.veterinaire_g10.repositories.RendezvousRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -32,7 +34,24 @@ public class RendezVousController {
 
 
     @PostMapping
-    public RendezVous create(@RequestBody RendezVous rendezvous) { return rendezvousRepository.saveAndFlush(rendezvous); }
+    public RendezVous create(@RequestBody RendezVous rendezvous) {
+        RendezVous rdvd = null;
+        RendezVous rdvhd = null;
+        RendezVous rdvhf = null;
+        try {
+            rdvd = rendezvousRepository.findByDaterdvLike(rendezvous.getDate_rdv());
+            rdvhd = rendezvousRepository.findByHeuredebutrdvLike(rendezvous.getHeure_debut_rdv());
+            rdvhf= rendezvousRepository.findByHeurefinrdvLike(rendezvous.getHeure_fin_rdv());
+            if(rdvd==null && rdvhd==null && rdvhf==null){
+                return rendezvousRepository.saveAndFlush(rendezvous);
+            }
+        }catch (Exception e){
+            System.out.println("le rendez-vous à cette période n'est pas dispo");
+        }
+
+        return null;
+    }
+
 
 
 
