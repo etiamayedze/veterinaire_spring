@@ -27,11 +27,11 @@ public class Medecin {
     public Medecin() {
     }
 
-    public String getNom_medecin() {
+    public String getNomMedecin() {
         return nommedecin;
     }
 
-    public void setNom_medecin(String nommedecin) {
+    public void setNomMedecin(String nommedecin) {
         this.nommedecin = nommedecin;
     }
 

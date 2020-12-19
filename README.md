@@ -1,21 +1,24 @@
 # veterinaire_spring
 
-    TP : Programmation par composant
+    Projet : Programmation par composant
 
 ## Titre
 
     Clinique vétérinaire
 
 ## Que fait notre API ?
-Il s'agit d'une solution pour une clinique vétérinaire ou les animaux prennent des rendez-vous et les médecins leur prescrivent des médicaments sur ordonnance.
+Il s'agit d'une solution pour les cliniques vétérinaires permettant d'enregistrer les interactions entre les patients(animaux) et le personnel médical
 
-* Médecins: ajout/modif/suppr/Liste/Recherche par nom
-* Animaux: ajout/modif/suppr/Liste/Recherche par nom
-* Rendez-vous: ajout/modif/suppr/Liste/Recherche par nom
-* Médicaments: ajout/modif/suppr/Liste/Recherche par nom
-* Ordonance: ajout/modif/suppr/Liste/Recherche par nom
+* Médecins: ajout/modif/suppr/Liste/Recherche par nom et par id
+* Animaux: ajout/modif/suppr/Liste/Recherche par nom et par id
+* Rendez-vous: ajout/modif/suppr/Liste/Recherche par id
+* Médicaments: ajout/modif/suppr/Liste/Recherche par nom et par id
+* Parents: ajout/modif/suppr/Liste/Recherche par nom et par id
+* Ordonance: ajout/modif/suppr/Liste/Recherche par id
+* Prescription: ajout/modif/suppr/Liste/Recherche par id
+* Types d'animaux: ajout/modif/suppr/Liste/Recherche par id et par nom
 
-## Technologies
+## Technologie
 
 * [Spring-Boot](https://spring.io/projects/spring-boot)
 

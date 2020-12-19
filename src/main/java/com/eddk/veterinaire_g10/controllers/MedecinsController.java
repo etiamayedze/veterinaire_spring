@@ -34,7 +34,7 @@ public class MedecinsController {
     public Medecin updateMedecin(@RequestBody Medecin medecin, @PathVariable ("id") Integer medecin_id){
         Medecin existingMedecin = this.medecinRepository.findById(medecin_id)
                 .orElseThrow(()-> new RessourceNotFoundException("Medecin not found with id :"+medecin_id));
-        existingMedecin.setNom_medecin(medecin.getNom_medecin());
+        existingMedecin.setNomMedecin(medecin.getNomMedecin());
         existingMedecin.setPrenom_medecin(medecin.getPrenom_medecin());
         existingMedecin.setContact(medecin.getContact());
         return this.medecinRepository.save(existingMedecin);

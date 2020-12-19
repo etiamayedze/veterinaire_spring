@@ -52,9 +52,9 @@ CREATE TABLE IF NOT EXISTS medecin
 CREATE TABLE IF NOT EXISTS rendezvous
 (
     rdv_id                int not null AUTO_INCREMENT primary key,
-    data_rdv              datetime unique,
-    heure_debut_rdv        datetime unique,
-    heure_fin_rdv          datetime unique,
+    data_rdv              datetime NOT NULL UNIQUE,
+    heure_debut_rdv        datetime NOT NULL UNIQUE,
+    heure_fin_rdv          datetime NOT NULL UNIQUE,
     medecin_id              int NOT NULL REFERENCES medecin (medecin_id),
     animal_id               int NOT NULL REFERENCES animal (animal_id)
 );

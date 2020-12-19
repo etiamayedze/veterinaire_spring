@@ -1,0 +1,1203 @@
+{
+	"info": {
+		"_postman_id": "799d19fc-daf1-4c89-87ce-ada1520624ca",
+		"name": "Veterinaire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "oauth",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medecins",
+			"item": [
+				{
+					"name": "Get all medecin",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medecins",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medecins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update medecin",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"medecin_id\": 1,\r\n    \"nom_medecin\": \"Kossi\",\r\n    \"prenom_medecin\": \"Etiam Nathanaël\",\r\n    \"contact\": \"0601548976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medecins/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medecins",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create medecin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medecins/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medecins",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete medecin",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medecins/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medecins",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name Kossi",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medecins/recherche/Nibaruta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medecins",
+								"recherche",
+								"Nibaruta"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name Nibaruta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medecins/recherche/{recherche}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medecins",
+								"recherche",
+								"{recherche}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Type Aniaml",
+			"item": [
+				{
+					"name": "Get all type animal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/typesanimal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"typesanimal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update type animal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"medecin_id\": 1,\r\n    \"nom_medecin\": \"Kossi\",\r\n    \"prenom_medecin\": \"Etiam Nathanaël\",\r\n    \"contact\": \"0601548976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/typesanimal/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"typesanimal",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create type animal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/typesanimal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"typesanimal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete type animal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/typesanimal/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"typesanimal",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name chien",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/typesanimal/recherche/chien",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"typesanimal",
+								"recherche",
+								"chien"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/typesanimal/recherche/{rechercher}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"typesanimal",
+								"recherche",
+								"{rechercher}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name cheval",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/typesanimal/recherche/cheval",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"typesanimal",
+								"recherche",
+								"cheval"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Parent",
+			"item": [
+				{
+					"name": "Get all parent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/parents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"parents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update parent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"medecin_id\": 1,\r\n    \"nom_medecin\": \"Kossi\",\r\n    \"prenom_medecin\": \"Etiam Nathanaël\",\r\n    \"contact\": \"0601548976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/parents/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"parents",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/parents",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"parents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete parent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/parents/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"parents",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name Popo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/parents/recherche/Popo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"parents",
+								"recherche",
+								"Popo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/parents/recherche/{recherche}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"parents",
+								"recherche",
+								"{recherche}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name  Doudou",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/parents/recherche/Doudou",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"parents",
+								"recherche",
+								"Doudou"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Animal",
+			"item": [
+				{
+					"name": "Get all animal",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/animals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update animal",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"medecin_id\": 1,\r\n    \"nom_medecin\": \"Kossi\",\r\n    \"prenom_medecin\": \"Etiam Nathanaël\",\r\n    \"contact\": \"0601548976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/animals/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"animals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create animal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/animals",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"animals"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete animal",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/animals/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"animals",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/animals/recherche/{recherche}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"animals",
+								"recherche",
+								"{recherche}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Rendez-vous",
+			"item": [
+				{
+					"name": "Get all rendezvous",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/rendezvous",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"rendezvous"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update rendezvous",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"medecin_id\": 1,\r\n    \"nom_medecin\": \"Kossi\",\r\n    \"prenom_medecin\": \"Etiam Nathanaël\",\r\n    \"contact\": \"0601548976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/rendezvous/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"rendezvous",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create rendezvous",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/rendezvous/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"rendezvous",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete rendezvous",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/rendezvous/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"rendezvous",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Medicament",
+			"item": [
+				{
+					"name": "Get all medicament",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medicaments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medicaments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update medicament",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"medecin_id\": 1,\r\n    \"nom_medecin\": \"Kossi\",\r\n    \"prenom_medecin\": \"Etiam Nathanaël\",\r\n    \"contact\": \"0601548976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medicaments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medicaments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create medicament",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medicaments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medicaments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete medicament",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medicaments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medicaments",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/medicaments/recherche/{recherche}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"medicaments",
+								"recherche",
+								"{recherche}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Ordonnance",
+			"item": [
+				{
+					"name": "Get all ordonnance",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/ordonnances",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"ordonnances"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ordonnance",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ordonnance_id\": 6\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/ordonnance/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"ordonnance",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create ordonnance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/ordonnance",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"ordonnance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ordonnance",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/ordonnance/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"ordonnance",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Prescription",
+			"item": [
+				{
+					"name": "Get all prescription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/prescriptions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"prescriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update prescription",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"medecin_id\": 1,\r\n    \"nom_medecin\": \"Kossi\",\r\n    \"prenom_medecin\": \"Etiam Nathanaël\",\r\n    \"contact\": \"0601548976\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/prescriptions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"prescriptions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create prescription",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"nom_medecin\": \"DeFrance\",\n    \"prenom_medecin\": \"Karim\",\n    \"contact\": \"0601548976\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v0/prescriptions/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"prescriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete prescription",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v0/prescriptions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v0",
+								"prescriptions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
