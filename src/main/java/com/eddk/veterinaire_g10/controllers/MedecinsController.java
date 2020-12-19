@@ -2,11 +2,10 @@ package com.eddk.veterinaire_g10.controllers;
 
 import com.eddk.veterinaire_g10.exception.RessourceNotFoundException;
 import com.eddk.veterinaire_g10.models.Medecin;
-import com.eddk.veterinaire_g10.models.Medicament;
 import com.eddk.veterinaire_g10.repositories.MedecinRepository;
+import com.eddk.veterinaire_g10.repositories.MedicamentRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,36 +15,34 @@ import java.util.List;
 public class MedecinsController {
     @Autowired
     private MedecinRepository medecinRepository;
-    // get all Medecins
+
+    public MedecinsController(MedecinRepository medecinRepository){
+        this.medecinRepository = medecinRepository;
+    }
+
     @GetMapping
-    public List<Medecin> getAllMedecins(){
-        return this.medecinRepository.findAll();
+    public List<Medecin> list() {
+        return medecinRepository.findAll();
     }
-    // get medecin by id
-    @GetMapping("/{id}")
-    public Medecin getMedecinById(@PathVariable(value = "id") Integer medecin_id){
-        return this.medecinRepository.findById(medecin_id).orElseThrow(()-> new RessourceNotFoundException("Medecin not found with id :"+medecin_id));
+
+    @RequestMapping("{id}")
+    public Medecin get(@PathVariable int id){
+        return medecinRepository.getOne(id);
     }
-    //create medecin
+
     @PostMapping
-    public Medecin createMedecin(@RequestBody Medecin medecin){
-        return this.medecinRepository.saveAndFlush(medecin);
+    public Medecin create(@RequestBody Medecin medecin) { return medecinRepository.saveAndFlush(medecin); }
+
+    @RequestMapping(value="{id}", method = RequestMethod.DELETE)
+    public void delete (@PathVariable int id) {
+        medecinRepository.deleteById(id);
     }
-    // update medecin
+
     @RequestMapping(value = "{id}", method=RequestMethod.PUT)
     public Medecin update(@PathVariable int id, @RequestBody Medecin medecin){
         Medecin existingMedecin = medecinRepository.getOne(id);
         BeanUtils.copyProperties(medecin, existingMedecin, "medecin_id");
         return medecinRepository.saveAndFlush(existingMedecin);
-    }
-    // Delete medecin by id
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Medecin> deleteMedecin (@PathVariable ("id") Integer medecin_id){
-        Medecin existingMedecin = this.medecinRepository.findById(medecin_id)
-                .orElseThrow(()-> new RessourceNotFoundException("Medecin not found with id :"+medecin_id));
-        this.medecinRepository.delete(existingMedecin);
-        return ResponseEntity.ok().build();
-
     }
 
     @GetMapping(value = "/recherche/{recherche}")

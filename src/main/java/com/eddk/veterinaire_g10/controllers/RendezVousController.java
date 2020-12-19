@@ -19,19 +19,15 @@ public class RendezVousController {
 
     //get all rdv
     @GetMapping
-    public List<RendezVous> getRendezVous(){
+    public List<RendezVous> getRendezVous() {
 
         return this.rendezvousRepository.findAll();
-
     }
-
 
     //get rdv by ID
     @GetMapping("/{id}")
     public RendezVous getRendezVousById(@PathVariable(value = "id") Integer rdv_id){
-
         return this.rendezvousRepository.findById(rdv_id).orElseThrow(() -> new ResourceNotFoundException("Rendez-vous not found"));
-
     }
 
 

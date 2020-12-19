@@ -6,6 +6,7 @@ import java.util.Optional;
 import com.eddk.veterinaire_g10.exception.RessourceNotFoundException;
 import com.eddk.veterinaire_g10.models.Medecin;
 import com.eddk.veterinaire_g10.models.TypeAnimal;
+import com.eddk.veterinaire_g10.repositories.MedecinRepository;
 import com.eddk.veterinaire_g10.repositories.TypeAnimalRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,39 +21,37 @@ import com.eddk.veterinaire_g10.repositories.AnimalRepository;
 public class AnimalsController {
 	@Autowired
 	private AnimalRepository animalRepository;
-	// get all type animal
+
+	public AnimalsController(AnimalRepository animalRepository){
+		this.animalRepository = animalRepository;
+	}
+
 	@GetMapping
-	public List<Animal> getAllAnimal(){
-		return this.animalRepository.findAll();
+	public List<Animal> list() {
+		return animalRepository.findAll();
 	}
-	// get animal by id
-	@GetMapping("/{id}")
-	public Animal getAnimalById(@PathVariable(value = "id") Integer animal_id){
-		return this.animalRepository.findById(animal_id).orElseThrow(()-> new RessourceNotFoundException(" animal not found with id :"+animal_id));
+
+	@RequestMapping("{id}")
+	public Animal get(@PathVariable int id){
+		return animalRepository.getOne(id);
 	}
-	//create type animal
+
 	@PostMapping
-	public Animal createAnimal(@RequestBody Animal animal){
-		return this.animalRepository.save(animal);
+	public Animal create(@RequestBody Animal animal) { return animalRepository.saveAndFlush(animal); }
+
+	@RequestMapping(value="{id}", method = RequestMethod.DELETE)
+	public void delete (@PathVariable int id) {
+		animalRepository.deleteById(id);
 	}
-	// update type animal
 
-
-	@RequestMapping(value = "{id}", method= RequestMethod.PUT)
+	@RequestMapping(value = "{id}", method=RequestMethod.PUT)
 	public Animal update(@PathVariable int id, @RequestBody Animal animal){
 		Animal existingAnimal = animalRepository.getOne(id);
 		BeanUtils.copyProperties(animal, existingAnimal, "animal_id");
 		return animalRepository.saveAndFlush(existingAnimal);
 	}
-	// Delete type animal by id
-	@DeleteMapping("/{id}")
-	public ResponseEntity<TypeAnimal> deleteTypeAnimal (@PathVariable ("id") Integer animal_id){
-		Animal existingType = this.animalRepository.findById(animal_id)
-				.orElseThrow(()-> new RessourceNotFoundException("Type animal not found with id :"+animal_id));
-		this.animalRepository.delete(existingType);
-		return ResponseEntity.ok().build();
 
-	}
+
 
 	@GetMapping(value = "/recherche/{recherche}")
 	public List<Animal> searchForEntity(@PathVariable String recherche) {

@@ -37,6 +37,7 @@ public class Animal {
         this.sex_animal = sex_animal;
         this.type_animal = type_animal;
     }
+
     public Animal() {
     }
 
